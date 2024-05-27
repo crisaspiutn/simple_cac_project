@@ -1,6 +1,6 @@
 let headerIndex=`
-<div class="btn_menu icon-menu"></div>
-<nav class="menu">
+<label for="manu_act" class="btn_menu icon-menu"></label>
+<div class="menu">
   <!-- Logo -->
   <div class="logoTextoImg" id="logo">
     <a href="#">
@@ -11,7 +11,7 @@ let headerIndex=`
       </div>
     </a>
   </div>
-
+  <input type="checkbox" id="manu_act" />
   <ul class="listaNav">
     <li><a class="lista" href="#">Inicio</a></li>
     <!-- <li><a class="lista" href="./views/galeria.html">Galería</a></li> -->
@@ -40,7 +40,7 @@ let headerIndex=`
       </div>
     </li>
   </ul>
-</nav>`
+</div>`
 
 
 if (verificarExistenciaId('idHeader')){

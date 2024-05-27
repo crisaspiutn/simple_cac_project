@@ -86,7 +86,9 @@
     transform: scale(1);
   }
 }
-
+#manu_act{
+  display: none; 
+}
 .header {
   z-index: 10;
   background: var(--GradienteBlancoTop);
@@ -105,6 +107,10 @@
 
   align-items: center;
   margin: 0;
+  transition: 0.4s;
+  /* left: -40%; */
+  /* position: absolute; */
+  /* transform: translateX(-100%); */
 }
 
 .listaNav li .sub_menu {
@@ -422,6 +428,7 @@ h2 {
 
 /* CELULARES */
 @media screen and (max-width: 767px) {
+  
   .card-banner h1 {
     margin-top: 1vh;
     margin-bottom: 1vh;
@@ -488,29 +495,33 @@ h2 {
     color: blanchedalmond;
     font-family: "Noto Serif", sans-serif;
   }
+  .listaNav .lista{
+    padding: 8px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .logoTextoImg {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
   }
 
   #logo {
-    transform: scale(0.7);
+    /* provoca un achicamiento 
+    que genera un falso borde 
+    que no se puede controlar ni centrar ni posicionar*/
+    /* transform: scale(0.7); */
   }
   .logo-text {
     text-align: center;
-    font-size: 0.7 rem;
+    font-size: 12px;
   }
 
-  .header .listaNav .lista {
-    display: none;
-  }
+  
 
-  .header .listaNav .contacto {
+  .header .listaNav{
     display: flex;
   }
 
@@ -523,19 +534,22 @@ h2 {
   }
 
   .menu {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
+  
   .header .listaNav .lista {
-    display: none;
+    /* display: none; */
   }
 
-  .header .listaNav .contacto {
+  /* .header .listaNav .contacto { */
+  .header .listaNav {
     display: flex;
+    justify-content: space-around;
   }
 
   .header .listaNav .linkNav,
@@ -546,17 +560,162 @@ h2 {
     justify-content: center;
   }
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  /* .menu { */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+  /* } */
 }
 
 @media screen and (min-width: 768px) and (max-width: 1123px) {
   .menu {
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+}
+@media screen and (max-width: 360px) {
+  :root{
+    --alto-btn-menu:60px;
+  }
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+  
+    25% {
+      transform: scale(1.05);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  
+    75% {
+      transform: scale(1.05);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  .header{
+    position: sticky;
+  }
+  .header,.menu{
+    height: var(--alto-btn-menu);
+    /* height: 60px; */
+  }
+  .menu{
+    padding: 0;
+    /* border: 1px solid green; */
+    margin: 0;
+    /* display: flex; */
+    justify-content: right;
+    /* flex-direction: row; */
+    /* position: relative; */
+  }
+  .logoTextoImg{
+    display: flex;
+  }
+  .btn_menu{
+    display: flex;
+    /* z-index: 1; */
+  }
+  .listaNav {
+    position: absolute;
+    background: var(--GradienteCelesteBlanco);
+    top: 60px;
+    left: -40%;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  }
+  #manu_act:checked + .listaNav{
+    /* display: none; */
+    /* left: -40%; */
+    left: 0%;
+    /* right: -100%; */
+    /* transform: translateX(0%); */
+  }
+  
+  .lista, .contacto{
+    /* display: none; */
+    
+  }
+  
+  #logo > a {
+    margin-left: 0px;
+    flex-wrap: wrap;
+  }
+  .btn_menu{
+    display: flex;
+  }
+  .card-banner h1 {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+  .card-banner h2 {
+    font-size: 1.1vh;
+    margin-top: 1vh;
+    margin-bottom: 1.1vh;
+  }
+
+  .h2-subtitle {
+    font-size: 5vw;
+  }
+
+  #banner {
+    height: 350px;
+  }
+
+  #search {
+    height: 200px;
+  }
+
+  .container {
+    max-width: 420px;
+  }
+
+  .card-banner {
+    margin-top: 50px;
+    padding: 0px 50px;
+  }
+
+  .btn-Registrarse {
+    font-size: 1vh;
+  }
+
+  #form-wrapper {
+    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(117, 170, 219, 0.7);
+    border-radius: 30px 2px;
+  }
+
+  .controls {
+    font-size: 10px;
+  }
+
+  .form-control {
+    padding: 2.5px;
+    font-size: 12px;
+  }
+  .btn {
+    font-size: 12px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-family: "Noto Serif", sans-serif;
+    background-color: cornflowerblue;
+    color: white;
+    margin: 0.7rem;
+  }
+
+  .form-help {
+    font-size: 0.8rem;
+    color: blanchedalmond;
+    font-family: "Noto Serif", sans-serif;
+  }
+  .listaNav .lista{
+    padding: 12px;
   }
 }
